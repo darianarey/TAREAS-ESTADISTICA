@@ -1,0 +1,30 @@
+1. 
+SELECT city, population 
+FROM north_american_cities
+WHERE country LIKE "Canada"
+
+2. 
+SELECT City, Latitude 
+FROM north_american_cities
+WHERE country LIKE "United States"
+ORDER BY Latitude DESC
+
+3.
+SELECT City 
+FROM north_american_cities
+WHERE Longitude < -87.629798 
+ORDER BY Longitude
+
+4. 
+SELECT City 
+FROM north_american_cities
+WHERE Country like "Mexico" 
+ORDER BY Population DESC 
+LIMIT 2
+
+5.
+SELECT City 
+FROM north_american_cities
+WHERE Country LIKE "United States"
+ORDER BY Population DESC 
+LIMIT 2 OFFSET 2
