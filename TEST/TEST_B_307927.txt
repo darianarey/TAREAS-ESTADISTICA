@@ -15,8 +15,7 @@ c) FROM -> WHERE -> SELECT -> ORDER BY
 a) Anomalía de inserción, eliminación y actualización.
 
 5.   
-GIT ADD solo sube a los pasajeros a las escaleras esperando a ser enviados con GIT PUSH que funciona igual a un avión despegando para aterrizar en el destino (en este caso el repositorio de GIT). Por ultimo, el logro de un aterrizaje y guardar cambios en el GIT con GIT COMMIT generan la misma sensación de éxito.
-
+Se están ejecutando los GIT en desorden, entonces el avión llega para recoger a los pasageros con GIT COMMIT y se vuelve a ir vacio con GIT PUSH ejecutado antes de tiempo. Al hacer poner el GIT ADD al final, no hay a donde vallan los pasajeros (archivos) pues el avión ya partió sin ellos y ya no pueden llegar a su destino (el repositorio).
 
 #######################################################################################################################################
 # Práctica
