@@ -1,0 +1,66 @@
+307927 REYNOSO AMBRIZ DARIANA IXEL
+#######################################################################################################################################
+# Teoría
+
+1. 
+a) Como excepciones o casos avanzados que van más allá de las primeras tres formas normales.
+
+2. 
+WHERE se utiliza antes de agrupar los datos, para filtrar datos individuales. HAVING se usa después de agrupar los datos, para filtrar grupos.
+
+3. 
+c) FROM -> WHERE -> SELECT -> ORDER BY
+
+4. 
+a) Anomalía de inserción, eliminación y actualización.
+
+5.   
+GIT ADD solo sube a los pasajeros a las escaleras esperando a ser enviados con GIT PUSH que funciona igual a un avión despegando para aterrizar en el destino (en este caso el repositorio de GIT). Por ultimo, el logro de un aterrizaje y guardar cambios en el GIT con GIT COMMIT generan la misma sensación de éxito.
+
+
+#######################################################################################################################################
+# Práctica
+
+1.
+
+```SQL
+-- poner solución debajo de este mensaje
+
+
+SELECT AVG(edad) edad_promedio
+FROM alumnos
+WHERE apellido LIKE "%ez";
+
+
+```
+
+2.
+
+```SQL
+-- poner solución debajo de este mensaje
+
+
+SELECT a.nombre, a.apellido,
+	MAX(c.calificacion) AS calificacion_maxima
+FROM alumnos 
+	AS A LEFT JOIN calificaciones AS C ON a.expediente = c.expediente
+WHERE c.calificacion IS NOT NULL
+GROUP BY a.expediente, a.nombre, a.apellido;
+
+
+```
+
+3.
+
+```SQL
+-- poner solución debajo de este mensaje
+
+
+SELECT a.nombre, a.apellido, c.nombre_materia, c.calificacion
+FROM calificaciones 
+	AS C INNER JOIN alumnos AS a USING(expediente)
+WHERE c.calificacion > (SELECT AVG(calificacion)
+			FROM calificaciones
+			WHERE calificacion IS NOT NULL);
+
+```
